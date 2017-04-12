@@ -1,0 +1,56 @@
+﻿@model List<WeHeMo.DTO.DTO_TEST_REPORT>
+@{
+    ViewBag.Title = "Report";
+}
+
+<h2>Report</h2>
+
+<div class="row">
+    <div class="col-lg-7 col-md-7">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                Test Listeleme Sayfası
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>TestDate</th>
+                                <th>Status</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int sayac = 0;
+                                foreach (var item in Model)
+                                {
+                                    sayac++;
+                                    <tr>
+                                        <td>@sayac</td>
+                                        <td>@item.TestDate</td>
+                                        <td>@item.Succeed</td>
+                                        <td>@item.Description</td>
+                                        @*<td>
+                                                <button type="button" class="btn btn-default btn-lg">
+                                                    <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+                                                </button>
+                                            </td>*@
+                                        @*<td>
+                                            <a href="@Url.Action("Report", "Test", new {id=item.ID })" class="btn btn-default btn-lg" role="button"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></a>
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Delete", "Test", new {id=item.ID })" class="btn btn-default btn-lg" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                        </td>*@
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

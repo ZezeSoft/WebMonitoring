@@ -1,0 +1,26 @@
+﻿@model WeHeMo.DTO.DTO_TEST
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+
+<div class="container">
+    @using (Html.BeginForm("Add", "Test", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                @Html.Label("Url Ekleyiniz", new { @class = "col-sm-2 control-label" })
+            </div>         
+            @Html.Label("Url", new { @class = "col-sm-2 control-label" })
+            <div class="col-sm-10">
+                @Html.TextBoxFor(x => x.Url, new { @class = "form-control", placeholder = "Kullanıcı Adı.." })
+            </div>
+        </div>  
+         <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-info">Ekle</button>
+            </div>
+        </div>   
+    }
+</div>
